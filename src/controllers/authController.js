@@ -53,6 +53,7 @@ export const loginUser = async (req, res) => {
     message: 'Successfully logged in an user!',
     data: {
       accessToken: newSession.accessToken,
+      user,
     },
   });
 };

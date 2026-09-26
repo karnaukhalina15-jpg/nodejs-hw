@@ -11,7 +11,6 @@ import {
   loginUserSchema,
   registerUserSchema,
 } from '../validations/authValidation.js';
-
 const authRouter = Router();
 
 authRouter.post('/auth/register', celebrate(registerUserSchema), registerUser);
