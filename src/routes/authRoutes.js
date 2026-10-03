@@ -17,8 +17,12 @@ import {
 } from '../validations/authValidation.js';
 const authRouter = Router();
 
-authRouter.post('/auth/register', celebrate(registerUserSchema), registerUser);
-authRouter.post('/auth/login', celebrate(loginUserSchema), loginUser);
+authRouter.post(
+  '/auth/register',
+  celebrate({ body: registerUserSchema }),
+  registerUser,
+);
+authRouter.post('/auth/login', celebrate({ body: loginUserSchema }), loginUser);
 authRouter.post('/auth/logout', logoutUser);
 authRouter.post('/auth/refresh', refreshUserSession);
 authRouter.post(
